@@ -4,6 +4,7 @@ import com.pengrad.telegrambot.TelegramBot;
 import com.pengrad.telegrambot.model.request.InlineKeyboardButton;
 import com.pengrad.telegrambot.model.request.InlineKeyboardMarkup;
 import com.pengrad.telegrambot.request.SendMessage;
+import pro.sky.telegrambot.enums.CallbackDataEnum;
 
 /**
  * Класс стартовое меню. Выполнено в отдельном классе, для удобства вызова при выборе кнопки "В главное меню"
@@ -15,6 +16,7 @@ public class MainMenu {
         this.telegramBot = telegramBot;
     }
 
+
     // Метод показать меню
     public void showStartMenu(TelegramBot telegramBot, Long chatId) {
         String text = "Привет, Вас приветствует помощник приложения Help-Pets. \n" +
@@ -22,13 +24,13 @@ public class MainMenu {
 
         // Создание кнопок.
         InlineKeyboardButton button1 = new InlineKeyboardButton("Узнать информацию о приюте");
-        button1.callbackData("ButtonMainMenu1");
+        button1.callbackData(CallbackDataEnum.buttonMainMenu1);
         InlineKeyboardButton button2 = new InlineKeyboardButton("Как взять собаку из приюта");
-        button2.callbackData("ButtonMainMenu2");
+        button2.callbackData(CallbackDataEnum.buttonMainMenu2);
         InlineKeyboardButton button3 = new InlineKeyboardButton("Прислать отчет о питомце");
-        button3.callbackData("ButtonMainMenu3");
+        button3.callbackData(CallbackDataEnum.buttonMainMenu3);
         InlineKeyboardButton button4 = new InlineKeyboardButton("Позвать волонтера");
-        button4.callbackData("ButtonCallVolunteer");
+        button4.callbackData(CallbackDataEnum.buttonCallVolunteer);
 
         // Установка кнопок в 2 ряда.
         InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();

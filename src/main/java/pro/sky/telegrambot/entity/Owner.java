@@ -16,7 +16,7 @@ public class Owner {
     private String name;
 
     @Column(name = "phoneNumber", nullable = false)
-    private Integer phoneNumber;
+    private String phoneNumber;
 
     @Column(name = "chatId", nullable = false)
     private Long chatId;
@@ -43,11 +43,11 @@ public class Owner {
         this.name = name;
     }
 
-    public Integer getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(Integer phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
