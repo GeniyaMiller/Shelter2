@@ -1,0 +1,2 @@
+/src/main/resources/liquibase/changelog-master.yml
+/src/main/resources/liquibase/init.sql
