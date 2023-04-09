@@ -7,7 +7,6 @@ import pro.sky.telegrambot.entity.Owner;
 import pro.sky.telegrambot.repository.DogRepository;
 import pro.sky.telegrambot.repository.OwnerRepository;
 
-import java.util.List;
 import java.util.Optional;
 
 /**
@@ -68,26 +67,5 @@ public class OwnerService {
     public void deleteOwner(long id){
         logger.debug("Удаляем владельца по id");
         ownerRepository.deleteById(id);
-    }
-
-    /**
-     * Получаем информацию о владельце по идентификатору. <br>
-     * Используется метод репозитория {@link OwnerRepository#getOwnerByChatId(Long chatID)}
-     *
-     * @param chatId идентификатор владельца
-     * @return Owner
-     */
-    public Owner findOwnerByChatId(Long chatId) {
-        return ownerRepository.getOwnerByChatId(chatId);
-    }
-
-    /**
-     * Получаем информацию о владельцах из БД. <br>
-     * Используется метод репозитория {@link OwnerRepository#findAll()}
-     *
-     * @return List<Owner>
-     */
-    public List<Owner> findAllOwners() {
-        return ownerRepository.findAll();
     }
 }
