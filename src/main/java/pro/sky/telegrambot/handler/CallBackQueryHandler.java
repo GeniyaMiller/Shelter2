@@ -234,6 +234,22 @@ public class CallBackQueryHandler implements Handler {
                 SendMessage sendMessageRejection = new SendMessage(chatId, rejection);
                 telegramBot.execute(sendMessageRejection);
                 break;
+            case "ButtonSendingReport1": {
+                String formReport = "В ежедневный отчет входит следующая информация:" +
+                        "\n- Фото животного." +
+                        "\n- Рацион животного." +
+                        "\n- Общее самочувствие и привыкание к новому месту." +
+                        "\n- Изменение в поведении: отказ от старых привычек, приобретение новых.";
+                SendMessage sendFormReport = new SendMessage(chatId,formReport);
+                telegramBot.execute(sendFormReport);
+                break;
+            }
+            case "ButtonSendingReport2": {
+                String reportInfo = "Отправьте отчет о вашем питомце согласно форме.";
+                SendMessage sendReportInfo = new SendMessage(chatId,reportInfo);
+                telegramBot.execute(sendReportInfo);
+                break;
+            }
         }
     }
 }

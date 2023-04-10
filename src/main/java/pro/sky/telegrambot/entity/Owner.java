@@ -1,6 +1,7 @@
 package pro.sky.telegrambot.entity;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Entity
@@ -20,6 +21,16 @@ public class Owner {
 
     @Column(name = "chatId", nullable = false)
     private Long chatId;
+
+    @Column(name = "photo_report")
+    private byte[] photoReport;
+
+    @Column(name = "string_report")
+    private String stringReport;
+
+    @Column(name = "last_report")
+    private LocalDateTime dateOfLastReport;
+
 
 //    @Column(name = "Status")
 //    private OwnerStatus ownerStatus;
@@ -59,7 +70,31 @@ public class Owner {
         this.chatId = chatId;
     }
 
-//    public OwnerStatus getOwnerStatus() {
+    public byte[] getPhotoReport() {
+        return photoReport;
+    }
+
+    public void setPhotoReport(byte[] photoReport) {
+        this.photoReport = photoReport;
+    }
+
+    public String getStringReport() {
+        return stringReport;
+    }
+
+    public void setStringReport(String stringReport) {
+        this.stringReport = stringReport;
+    }
+
+    public LocalDateTime getDateOfLastReport() {
+        return dateOfLastReport;
+    }
+
+    public void setDateOfLastReport(LocalDateTime dateOfLastReport) {
+        this.dateOfLastReport = dateOfLastReport;
+    }
+
+    //    public OwnerStatus getOwnerStatus() {
 //        return ownerStatus;
 //    }
 
