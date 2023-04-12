@@ -1,11 +1,11 @@
 package pro.sky.telegrambot.entity;
 
-import pro.sky.telegrambot.enums.PetType;
 import pro.sky.telegrambot.enums.ProbationaryStatus;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Objects;
 
 @Entity
@@ -21,9 +21,8 @@ public class Owner {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "pet_type")
-    @Enumerated(EnumType.STRING)
-    private PetType petType;
+    @OneToMany(mappedBy = "owner")
+    private Collection<Dog> dogs;
 
     @Column(name = "photo_report")
     private byte[] photoReport;
@@ -111,14 +110,6 @@ public class Owner {
         this.name = name;
     }
 
-    public PetType getPetType() {
-        return petType;
-    }
-
-    public void setPetType(PetType petType) {
-        this.petType = petType;
-    }
-
     public byte[] getPhotoReport() {
         return photoReport;
     }
@@ -135,35 +126,4 @@ public class Owner {
         this.stringReport = stringReport;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Owner owner = (Owner) o;
-        return periodExtend == owner.periodExtend && Objects.equals(id, owner.id) && Objects.equals(chatId, owner.chatId) && Objects.equals(name, owner.name) && petType == owner.petType && Arrays.equals(photoReport, owner.photoReport) && Objects.equals(stringReport, owner.stringReport) && Objects.equals(dateOfLastReport, owner.dateOfLastReport) && Objects.equals(dateOfStartProbation, owner.dateOfStartProbation) && Objects.equals(dateOfEndProbation, owner.dateOfEndProbation) && probationaryStatus == owner.probationaryStatus;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = Objects.hash(id, chatId, name, petType, stringReport, dateOfLastReport, dateOfStartProbation, dateOfEndProbation, probationaryStatus, periodExtend);
-        result = 31 * result + Arrays.hashCode(photoReport);
-        return result;
-    }
-
-    @Override
-    public String toString() {
-        return "Owner{" +
-                "id=" + id +
-                ", chatId=" + chatId +
-                ", name='" + name + '\'' +
-                ", petType=" + petType +
-                ", photoReport=" + Arrays.toString(photoReport) +
-                ", stringReport='" + stringReport + '\'' +
-                ", dateOfLastReport=" + dateOfLastReport +
-                ", dateOfStartProbation=" + dateOfStartProbation +
-                ", dateOfEndProbation=" + dateOfEndProbation +
-                ", probationaryStatus=" + probationaryStatus +
-                ", periodExtend=" + periodExtend +
-                '}';
-    }
 }

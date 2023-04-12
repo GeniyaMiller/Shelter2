@@ -129,8 +129,8 @@ public class InlineKeyboard {
     public void showVolunteerMenu(Long chatId) {
         String text = "Добрый день, меня зовут волантер Гриша, я могу помочь вам со следующими функциями." +
                 "\n1.Если вы хотите отправить очет о прибывании животного на новом месте, для этого мне" +
-                "сначала необходимо вас зарегестрировать, если вы являетесь хозяином собаки пожалуйста " +
-                "напишите в чат команду: \n/saveDogOwner";
+                " сначала необходимо вас зарегестрировать, пожалуйста " +
+                " напишите в чат команду: \n/saveOwner";
         InlineKeyboardButton firstButton = new InlineKeyboardButton("Вернуться на главное меню");
         firstButton.callbackData("Кнопка 4.1");
         InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
