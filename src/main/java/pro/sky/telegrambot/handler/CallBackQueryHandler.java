@@ -286,6 +286,5 @@ public class CallBackQueryHandler implements Handler {
     private void saveContactDetails(Long chatId) {
         sendTextMessage(chatId, "Привет, отправь номер телефона и имя " +
                 "в формате 71112223344 Михаил");
-
     }
 }

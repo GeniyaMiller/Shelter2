@@ -1,16 +1,12 @@
 package pro.sky.telegrambot.service;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import pro.sky.telegrambot.entity.Owner;
-import pro.sky.telegrambot.enums.PetType;
 import pro.sky.telegrambot.enums.ProbationaryStatus;
 import pro.sky.telegrambot.repository.OwnerRepository;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Optional;
 
 /**
  * Методы для работы с репозиторием {@link OwnerRepository}
@@ -26,7 +22,6 @@ public class OwnerService {
 
     public void saveNewDogOwner(Long chatId,
                                 String name,
-                                PetType petType,
                                 LocalDateTime dateOfStartProbation,
                                 LocalDateTime dateOfEndProbation,
                                 LocalDateTime dateOfLastReport,
@@ -34,7 +29,6 @@ public class OwnerService {
         Owner owner = new Owner();
         owner.setChatId(chatId);
         owner.setName(name);
-        owner.setPetType(petType);
         owner.setDateOfStartProbation(dateOfStartProbation);
         owner.setDateOfEndProbation(dateOfEndProbation);
         owner.setDateOfLastReport(dateOfLastReport);

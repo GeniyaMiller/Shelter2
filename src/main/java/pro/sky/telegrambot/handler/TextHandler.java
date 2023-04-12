@@ -2,7 +2,6 @@ package pro.sky.telegrambot.handler;
 
 import pro.sky.telegrambot.entity.ContactDetails;
 import pro.sky.telegrambot.entity.Owner;
-import pro.sky.telegrambot.enums.PetType;
 import pro.sky.telegrambot.enums.ProbationaryStatus;
 import pro.sky.telegrambot.menu.InlineKeyboard;
 import pro.sky.telegrambot.service.ContactDetailsService;
@@ -12,7 +11,6 @@ import com.pengrad.telegrambot.model.Message;
 import com.pengrad.telegrambot.model.Update;
 import com.pengrad.telegrambot.request.SendMessage;
 
-import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.regex.Matcher;
@@ -51,18 +49,16 @@ public class TextHandler implements Handler {
 
         if ("/start".equals(text)) {
             inlineKeyboard.showStartMenu(chatId);
-        } else if ("/saveDogOwner".equals(text)) {
-            PetType petType = PetType.DOG;
+        } else if ("/saveOwner".equals(text)) {
             ownerService.saveNewDogOwner(chatId,
                     name,
-                    petType,
                     dateOfStartProbation,
                     dateOfEndProbation,
                     dateOfStartProbation,
                     ProbationaryStatus.ACTIVE
             );
             sendMessage(chatId, "Вы успешно зарегестрировались, ваши данные" +
-                    "\nваше имя: " + name + " \nтип животного: " + petType);
+                    "\nваше имя: " + name);
         } else if (matcher.find()) {
             String result = matcher.group(0);
             findMatchesAndSaveInBd(result, chatId);

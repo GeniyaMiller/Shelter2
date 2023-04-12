@@ -154,11 +154,11 @@ public class TelegramBotUpdatesListener implements UpdatesListener {
         Long VOLUNTEER_CHAT_ID = 512213990L;
         LocalDateTime localDateTimeNow = LocalDateTime.now().truncatedTo(ChronoUnit.MINUTES);
         owners.forEach(element -> {
-            if (element.getDateOfLastReport().plusMinutes(1).equals(localDateTimeNow)) {
+            if (element.getDateOfLastReport().plusDays(1).equals(localDateTimeNow)) {
                 telegramBot.execute(new SendMessage(element.getChatId(), "Дорогой усыновитель, мы заметили," +
                         " что за последние сутки вы предоставляли не подробные отчеты о животном, пожалуйста" +
                         " отнеситесь серьезно к предоставлению отчетов"));
-            } else if (element.getDateOfLastReport().plusMinutes(2).equals(localDateTimeNow)) {
+            } else if (element.getDateOfLastReport().plusDays(2).equals(localDateTimeNow)) {
                 telegramBot.execute(new SendMessage(VOLUNTEER_CHAT_ID, "Пользователь," +
                         " по имени: " + element.getName() + " id: " + element.getChatId() + " более двух суток не" +
                         " заполнял отчет, пожалуйста свяжитесь с ним"));
