@@ -8,5 +8,12 @@
       <jdbc-url>jdbc:postgresql://localhost:5432/Telegram_DB_Full</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="TelegramBotHelpPets@localhost" uuid="cfa77026-ba96-49ec-a926-8fce5a3c1d11">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/TelegramBotHelpPets</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>
