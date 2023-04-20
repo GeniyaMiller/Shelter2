@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="TelegramBotHelpPets@localhost" uuid="2bb9bb6c-f83e-4fdb-ba9c-19c95422b5ba">
+    <data-source source="LOCAL" name="Telegram_DB_Full@localhost" uuid="311ab2b4-00eb-4eca-a3e9-32eb4be660bf">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://localhost:5432/TelegramBotHelpPets</jdbc-url>
+      <jdbc-url>jdbc:postgresql://localhost:5432/Telegram_DB_Full</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>
