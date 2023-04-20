@@ -5,6 +5,8 @@ import com.pengrad.telegrambot.model.request.InlineKeyboardButton;
 import com.pengrad.telegrambot.model.request.InlineKeyboardMarkup;
 import com.pengrad.telegrambot.request.SendMessage;
 
+import static pro.sky.telegrambot.enums.CallbackDataEnum.*;
+
 public class InlineKeyboard {
     private final TelegramBot telegramBot;
 
@@ -18,13 +20,13 @@ public class InlineKeyboard {
                 " Вас приветствует помощник приложения Help-Pets," +
                 " пожалуйста выберите пункт из представленного меню ";
         InlineKeyboardButton firstButton = new InlineKeyboardButton("Узнать информацию о приюте");
-        firstButton.callbackData("Кнопка 1");
+        firstButton.callbackData(buttonMainMenu1);
         InlineKeyboardButton secondButton = new InlineKeyboardButton("Как взять собаку из приюта");
-        secondButton.callbackData("Кнопка 2");
+        secondButton.callbackData(buttonMainMenu2);
         InlineKeyboardButton thirdButton = new InlineKeyboardButton("Прислать отчет о питомце");
-        thirdButton.callbackData("Кнопка 3");
+        thirdButton.callbackData(buttonMainMenu3);
         InlineKeyboardButton fourthButton = new InlineKeyboardButton("Позвать волонтера");
-        fourthButton.callbackData("Кнопка 4");
+        fourthButton.callbackData(buttonCallVolunteer);
         InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
         inlineKeyboardMarkup.addRow(firstButton, secondButton);
         inlineKeyboardMarkup.addRow(thirdButton, fourthButton);
@@ -37,19 +39,19 @@ public class InlineKeyboard {
         String text = " Вы зашли в раздел  информации о приюте," +
                 " пожалуйста выберите пункт из представленного меню ";
         InlineKeyboardButton firstButton = new InlineKeyboardButton("Подробная информация о приюте");
-        firstButton.callbackData("Кнопка 1.1");
+        firstButton.callbackData(buttonShelter1);
         InlineKeyboardButton secondButton = new InlineKeyboardButton("Контактая информация");
-        secondButton.callbackData("Кнопка 1.2");
+        secondButton.callbackData(buttonShelter2);
         InlineKeyboardButton thirdButton = new InlineKeyboardButton("Рекомендации" +
                 " о технике безопасности на территории приюта");
-        thirdButton.callbackData("Кнопка 1.3");
+        thirdButton.callbackData(buttonShelter3);
         InlineKeyboardButton fourthButton = new InlineKeyboardButton("Записать " +
                 "контактные данные для связи");
-        fourthButton.callbackData("Кнопка 1.4");
+        fourthButton.callbackData(buttonSaveContactDetails);
         InlineKeyboardButton fifthButton = new InlineKeyboardButton("Позвать волонтера");
-        fifthButton.callbackData("Кнопка 1.5");
+        fifthButton.callbackData(buttonCallVolunteer);
         InlineKeyboardButton sixthButton = new InlineKeyboardButton("Вернуться на главное меню");
-        sixthButton.callbackData("Кнопка 1.6");
+        sixthButton.callbackData(buttonMainMenu);
         InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
         inlineKeyboardMarkup.addRow(firstButton, secondButton);
         inlineKeyboardMarkup.addRow(thirdButton, fourthButton);
@@ -61,39 +63,39 @@ public class InlineKeyboard {
     /*метод показывает меню бюрократических вопросов*/
     public void showBureaucraticMenu(Long chatId) {
         String text = " Вы зашли в раздел бюрократической информации," +
-                " и бытовых вопросов, даннгый раздел поможет Вам получить полную информацию" +
+                " и бытовых вопросов. Данный раздел поможет Вам получить полную информацию" +
                 " о том, как предстоит подготовиться человеку ко встрече с новым членом семьи.";
         InlineKeyboardButton firstButton = new InlineKeyboardButton("Правила знакомства с собакой");
-        firstButton.callbackData("Кнопка 2.1");
-        InlineKeyboardButton secondButton = new InlineKeyboardButton("Присок документов, чтобы взять собаку");
-        secondButton.callbackData("Кнопка 2.2");
+        firstButton.callbackData(buttonBureaucraticMenu1);
+        InlineKeyboardButton secondButton = new InlineKeyboardButton("Список документов, чтобы взять собаку");
+        secondButton.callbackData(buttonBureaucraticMenu2);
         InlineKeyboardButton thirdButton = new InlineKeyboardButton("Рекомендации по транспортировке");
-        thirdButton.callbackData("Кнопка 2.3");
+        thirdButton.callbackData(buttonBureaucraticMenu3);
         InlineKeyboardButton fourthButton = new InlineKeyboardButton("Рекомендации по обустройству дома" +
                 " для щенка");
-        fourthButton.callbackData("Кнопка 2.4");
+        fourthButton.callbackData(buttonBureaucraticMenu4);
         InlineKeyboardButton fifthButton = new InlineKeyboardButton("Рекомендации по обустройству дома" +
                 " для взрослой собаки");
-        fifthButton.callbackData("Кнопка 2.5");
+        fifthButton.callbackData(buttonBureaucraticMenu5);
         InlineKeyboardButton sixthButton = new InlineKeyboardButton("Рекомендации по обустройству дома" +
                 " для собаки с ограниченными возможностями");
-        sixthButton.callbackData("Кнопка 2.6");
+        sixthButton.callbackData(buttonBureaucraticMenu6);
         InlineKeyboardButton seventhButton = new InlineKeyboardButton("Советы кинолога по первичному " +
                 "общению с собакой");
-        seventhButton.callbackData("Кнопка 2.7");
+        seventhButton.callbackData(buttonBureaucraticMenu7);
         InlineKeyboardButton eightButton = new InlineKeyboardButton("Рекомендации по проверенным кинологам " +
                 "для дальнейшего обращения к ним");
-        eightButton.callbackData("Кнопка 2.8");
+        eightButton.callbackData(buttonBureaucraticMenu8);
         InlineKeyboardButton ninthButton = new InlineKeyboardButton("Причины согласно которым могут " +
                 "отказать забрать собаку из приюта");
-        ninthButton.callbackData("Кнопка 2.9");
+        ninthButton.callbackData(buttonBureaucraticMenu9);
         InlineKeyboardButton tenthButton = new InlineKeyboardButton("Записать " +
                 "контактные данные для связи");
-        tenthButton.callbackData("Кнопка 2.10");
+        tenthButton.callbackData(buttonSaveContactDetails);
         InlineKeyboardButton eleventhButton = new InlineKeyboardButton("Позвать волонтера");
-        eleventhButton.callbackData("Кнопка 2.11");
+        eleventhButton.callbackData(buttonCallVolunteer);
         InlineKeyboardButton twelfthButton = new InlineKeyboardButton("Вернуться на главное меню");
-        twelfthButton.callbackData("Кнопка 2.12");
+        twelfthButton.callbackData(buttonMainMenu);
         InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
         inlineKeyboardMarkup.addRow(firstButton, secondButton);
         inlineKeyboardMarkup.addRow(thirdButton, fourthButton);
@@ -109,13 +111,13 @@ public class InlineKeyboard {
     public void showReportMenu(Long chatId) {
         String text = " Вы зашли в раздел предоставления отчетов. ";
         InlineKeyboardButton firstButton = new InlineKeyboardButton("Прислать форму ежедневного отчета");
-        firstButton.callbackData("Кнопка 3.1");
+        firstButton.callbackData(buttonReportMenu1);
         InlineKeyboardButton secondButton = new InlineKeyboardButton("Отправить отчет");
-        secondButton.callbackData("Кнопка 3.2");
+        secondButton.callbackData(buttonReportMenu2);
         InlineKeyboardButton thirdButton = new InlineKeyboardButton("Вернуться на главное меню");
-        thirdButton.callbackData("Кнопка 3.3");
+        thirdButton.callbackData(buttonMainMenu);
         InlineKeyboardButton fourthButton = new InlineKeyboardButton("Позвать волонтера");
-        fourthButton.callbackData("Кнопка 3.4");
+        fourthButton.callbackData(buttonCallVolunteer);
         InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
         inlineKeyboardMarkup.addRow(firstButton, secondButton);
         inlineKeyboardMarkup.addRow(thirdButton, fourthButton);
@@ -127,12 +129,12 @@ public class InlineKeyboard {
      команду /saveDogOwner, из message берется его chatId, name, и пользователь записывается в бд
      как owner*/
     public void showVolunteerMenu(Long chatId) {
-        String text = "Добрый день, меня зовут волантер Гриша, я могу помочь вам со следующими функциями." +
-                "\n1.Если вы хотите отправить очет о прибывании животного на новом месте, для этого мне" +
-                " сначала необходимо вас зарегестрировать, пожалуйста " +
+        String text = "Добрый день, меня зовут волонтер Гриша. Я могу помочь вам со следующими функциями." +
+                "\n1.Если вы хотите отправить отчет о пребывании животного на новом месте, для этого мне" +
+                " сначала необходимо вас зарегистрировать, пожалуйста " +
                 " напишите в чат команду: \n/saveOwner";
         InlineKeyboardButton firstButton = new InlineKeyboardButton("Вернуться на главное меню");
-        firstButton.callbackData("Кнопка 4.1");
+        firstButton.callbackData(buttonMainMenu);
         InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
         inlineKeyboardMarkup.addRow(firstButton);
         SendMessage sendMessage = new SendMessage(chatId, text).replyMarkup(inlineKeyboardMarkup);

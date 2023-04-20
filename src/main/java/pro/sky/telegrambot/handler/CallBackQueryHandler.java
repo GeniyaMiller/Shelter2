@@ -12,6 +12,8 @@ import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
+import static pro.sky.telegrambot.enums.CallbackDataEnum.*;
+
 /**
  * "Перехватчик" updates типа CallBackQuery
  */
@@ -30,86 +32,79 @@ public class CallBackQueryHandler implements Handler {
         String data = callbackQuery.data();
         InlineKeyboard infoKeyboard = new InlineKeyboard(telegramBot);
         switch (data) {
-            case "Кнопка 1": {
+            case buttonMainMenu1: {
                 infoKeyboard.showInfoShelterMenu(chatId);
                 break;
             }
-            case "Кнопка 2": {
+            case buttonMainMenu2: {
                 infoKeyboard.showBureaucraticMenu(chatId);
                 break;
             }
-            case "Кнопка 3": {
+            case buttonMainMenu3: {
                 infoKeyboard.showReportMenu(chatId);
                 break;
             }
-            case "Кнопка 2.11":
-            case "Кнопка 1.5":
-            case "Кнопка 3.4":
-            case "Кнопка 4": {
+            case buttonCallVolunteer: {
                 infoKeyboard.showVolunteerMenu(chatId);
                 break;
             }
-            case "Кнопка 1.1": {
+            case buttonShelter1: {
                 showInfoAboutShelter(chatId);
                 break;
             }
-            case "Кнопка 1.2": {
+            case buttonShelter2: {
                 showContactInfoAboutShelter(chatId);
                 break;
             }
-            case "Кнопка 1.3": {
+            case buttonShelter3: {
                 showSafetyAdvice(chatId);
                 break;
             }
-            case "Кнопка 2.10":
-            case "Кнопка 1.4": {
+            case buttonSaveContactDetails: {
                 saveContactDetails(chatId);
                 break;
             }
-            case "Кнопка 1.6":
-            case "Кнопка 2.12":
-            case "Кнопка 3.3":
-            case "Кнопка 4.1": {
+            case buttonMainMenu: {
                 infoKeyboard.showStartMenu(chatId);
                 break;
             }
-            case "Кнопка 2.1": {
+            case buttonBureaucraticMenu1: {
                 showDogDatingRules(chatId);
                 break;
             }
-            case "Кнопка 2.2": {
+            case buttonBureaucraticMenu2: {
                 showListOfDocuments(chatId);
                 break;
             }
-            case "Кнопка 2.3": {
+            case buttonBureaucraticMenu3: {
                 showTransportationAdvices(chatId);
                 break;
             }
-            case "Кнопка 2.5": {
+            case buttonBureaucraticMenu5: {
                 showHomeImprovementTipsForDog(chatId);
                 break;
             }
-            case "Кнопка 2.6": {
+            case buttonBureaucraticMenu6: {
                 showHomeImprovementTipsForDogWithDisability(chatId);
                 break;
             }
-            case "Кнопка 2.7": {
+            case buttonBureaucraticMenu7: {
                 showDogHandlerAdvices(chatId);
                 break;
             }
-            case "Кнопка 2.8": {
+            case buttonBureaucraticMenu8: {
                 showContactsOfDogHandlers(chatId);
                 break;
             }
-            case "Кнопка 2.9": {
+            case buttonBureaucraticMenu9: {
                 showReasonsForRefusingToAdoptDog(chatId);
                 break;
             }
-            case "Кнопка 3.1": {
+            case buttonReportMenu1: {
                 showDailyReportForm(chatId);
                 break;
             }
-            case "Кнопка 3.2": {
+            case buttonReportMenu2: {
                 showSendReport(chatId);
                 break;
             }
